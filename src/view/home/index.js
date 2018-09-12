@@ -15,10 +15,10 @@ import {
 import Server from '../server/index'
 
 import {
-    SafeBody
+    SafeBody, SCREEN_WIDTH
 } from "../../lib/adjust";
 
-import {BACKGROUND_COLOR} from './../../lib/color'
+import {BACKGROUND_COLOR, RAISE} from './../../lib/color'
 import quotation from '../quotation/index'
 import HeadPart from './headPart';
 import QuotePart from './quotePart';
@@ -51,6 +51,7 @@ import { Cache, Schedule } from '../../module';
 import { createIconSet } from 'react-native-vector-icons';
 import Trade from "../trade";
 import {ViewRow} from "../../basicComponent";
+import {GRID_LINE_COLOR} from "../../lib/color";
 const glyphMap = { 'fcg': 1234, test: '∆' };
 const Icon = createIconSet(glyphMap, 'arrow-up');
 
@@ -104,8 +105,8 @@ class home extends Component {
         return (
             <SafeBody>
                 <ScrollView style={styles.scrollViewBackground} ref={(c)=>this.scrollView = c}>
-                    {/*<View style={{width:40,height:40,backgroundColor:'red'}}/>*/}
                     <HeadPart/>
+                    <Text style={{width:SCREEN_WIDTH,height:30,textAlign:'center',fontSize:15,color:RAISE,backgroundColor:GRID_LINE_COLOR}}>致远金融APP金融服务由上海前进投资有限公司提供</Text>
                     <QuotePart/>
                 </ScrollView>
             </SafeBody>
