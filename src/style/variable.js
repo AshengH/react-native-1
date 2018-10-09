@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native'
 import { HEADER_FONT_COLOR, BACKGROUND_COLOR } from '../lib/color';
 
+let commonStyles;
 export default commonStyles = StyleSheet.create({
     rowStyle:{
-        flexDirection:'row'
+        flexDirection:'row',
     },
     heightOffset:{
         height:20

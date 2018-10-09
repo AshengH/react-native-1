@@ -26,9 +26,9 @@ export const FALL_HIGHLIGHT = '#ff0000';
 
 export const ACCOUNT_COLOR ='#EEC544';
 
-export const NOTICE_CONTENT_FONT_COLOR = '#6e6e6f'
-export const NOTICE_TITLE_BACKGROUND = '#FEC525'
-export const HOME_NOTICE_CONTENT_BACKGROUND = '#FFF8ED';
+export const NOTICE_CONTENT_FONT_COLOR = '#F7C5B6'
+export const NOTICE_TITLE_BACKGROUND = '#B62A20'
+export const HOME_NOTICE_CONTENT_BACKGROUND = '#B62A20';
 export const DATE_FONT_COLOR = '#8F8E94'
 
 export const RULES_LEFT_COLOR = '#F1F5FC'

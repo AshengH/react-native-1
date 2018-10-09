@@ -92,7 +92,7 @@ class List extends Component {
                 loop={false}>
                 {
                     list.map((t) => {
-                        // console.log(t,'t是个什么的东西');
+                        console.log(t,'t是个什么的东西');
                         return (
                             <View style={styles.cellRoot}>
                                 {

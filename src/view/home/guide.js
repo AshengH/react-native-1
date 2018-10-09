@@ -23,16 +23,6 @@ export default class App extends Component{
             </SafeBody>
 
         )
-        // return(
-        //     <SafeBody>
-        //             <Header title={'Guideline'}/>
-        //             <ScrollView>
-        //                 <Image
-        //                     style={{flex:1}}
-        //                     source={require('./../../images/bg-guide.jpg')}/>
-        //             </ScrollView>
-        //     </SafeBody>
-        // );
     }
 }
 
