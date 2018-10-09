@@ -55,7 +55,7 @@ import {GRID_LINE_COLOR} from "../../lib/color";
 const glyphMap = { 'fcg': 1234, test: '∆' };
 const Icon = createIconSet(glyphMap, 'arrow-up');
 
-class home extends Component {
+class HomePage extends Component {
     scrollView = null;
     constructor(props) {
         super(props);
@@ -106,7 +106,7 @@ class home extends Component {
             <SafeBody>
                 <ScrollView style={styles.scrollViewBackground} ref={(c)=>this.scrollView = c}>
                     <HeadPart/>
-                    <Text style={{width:SCREEN_WIDTH,height:30,textAlign:'center',fontSize:15,color:RAISE,backgroundColor:GRID_LINE_COLOR}}>致远金融APP金融服务由上海前进投资有限公司提供</Text>
+                    <Text style={{width:SCREEN_WIDTH,height:30,textAlign:'center',fontSize:15,color:RAISE,backgroundColor:GRID_LINE_COLOR}}>精彩活动</Text>
                     <QuotePart/>
                 </ScrollView>
             </SafeBody>
@@ -120,7 +120,7 @@ class home extends Component {
 
 export default StackNavigator({
     Home: {
-        screen: home,
+        screen: HomePage,
         navigationOptions: {
             header: null
         }

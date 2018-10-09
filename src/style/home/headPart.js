@@ -11,7 +11,7 @@ export default styles = StyleSheet.create({
         justifyContent:'space-around'
     },
     banner: {
-        // height: 205 * RATIO,
+        marginTop: 25
     },
     server: {
         width: 25, 
@@ -39,12 +39,51 @@ export default styles = StyleSheet.create({
     functionButtonRoot:{
         width:'100%',
         backgroundColor:BACKGROUND_COLOR,
-        paddingVertical:10,
-        marginVertical:10
+        paddingVertical: 5,
+        marginVertical: 10,
+        justifyContent: 'space-between',
+        paddingHorizontal: 12
     },
-    functionButtonWrapper:{
-        flex:1,
-        justifyContent:'center'
+    activeTab: {
+        color: "#e4393c"
+    },
+    baseTabs: {
+        fontWeight: "bold",
+        fontSize: 16,
+        paddingRight: 18,
+        color: "#909090"
+    },
+    tabsWrapper: {
+        borderLeftWidth: 4,
+        borderLeftColor: '#CD3A3C',
+        paddingLeft: 8,
+        height: 17
+    },
+    cellRoot:{
+        flexDirection: 'row',
+        width: SCREEN_WIDTH,
+        justifyContent: 'space-around',
+        alignContent: 'center',
+        flexWrap: 'wrap'
+    },
+    touchable:{
+        alignSelf: 'center',
+        width: SCREEN_WIDTH / 3,
+        justifyContent: 'center'
+    },
+    fiatListWrapper:{
+        height: 103
+    },
+    backIcon: {
+       color: "#CD3A3C"
+    },
+    tabContentBox:{
+        width:'100%',
+        backgroundColor:BACKGROUND_COLOR,
+        paddingVertical: 10,
+        marginVertical: 5,
+        justifyContent: 'space-between',
+        paddingHorizontal: 30,
     },
     functionButtonText:{
         textAlign:'center'
@@ -131,7 +170,7 @@ export default styles = StyleSheet.create({
         color:HEADER_FONT_COLOR
     },
     homeNotice:{
-        width:'90%',
+        width:'95%',
         alignSelf:'center',
         marginBottom:10
     },
@@ -139,16 +178,15 @@ export default styles = StyleSheet.create({
         justifyContent:'center'
     },
     homeNoticeTitle:{
-        borderTopLeftRadius:4,
-        borderBottomLeftRadius:4,
         backgroundColor:NOTICE_TITLE_BACKGROUND,
-        color:BACKGROUND_COLOR,
+        color: "#F7C5B6",
         alignSelf:'center',
-        paddingVertical:10,
+        paddingVertical: 15,
         paddingHorizontal:20,
         overflow:'hidden',
-        borderRadius:17,
-        fontSize:16
+        borderRadius: 4,
+        fontSize: 17,
+        fontWeight: "bold"
     },
     homeNoticeTitleOffset:{
         backgroundColor:NOTICE_TITLE_BACKGROUND,
@@ -158,16 +196,18 @@ export default styles = StyleSheet.create({
         right:0
     },
     homeNoticeTouchable:{
-        justifyContent:'center'
+        justifyContent:'center',
     },
     homeNoticeContent:{
         paddingLeft:10,
-        color:NOTICE_CONTENT_FONT_COLOR
+        color: NOTICE_CONTENT_FONT_COLOR,
+        fontSize: 17,
+        fontWeight: "bold"
     },
     swiperWrapper:{
         backgroundColor:HOME_NOTICE_CONTENT_BACKGROUND,
-        borderRadius:16,
-        flex:1
+        borderRadius: 4,
+        flex:1,
     },
     swiperOffset:{
         backgroundColor:HOME_NOTICE_CONTENT_BACKGROUND,

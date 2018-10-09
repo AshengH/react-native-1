@@ -59,19 +59,6 @@ const Tab = TabNavigator({
                 color={tintColor}/>)
         })
     },
-    // Position: {
-    //     screen: Position,
-    //     navigationOptions: ({navigation}) => ({
-    //         header: null,
-    //         tabBarLabel: lang('Position'),
-    //         tabBarIcon: ({focused, tintColor}) => (<Icons
-    //             name={`ios-list-box${focused
-    //             ? ''
-    //             : '-outline'}`}
-    //             size={35}
-    //             color={tintColor}/>)
-    //     })
-    // },
     Broadcast: {
         screen: Broadcast,
         navigationOptions: ({navigation}) => ({
@@ -83,20 +70,6 @@ const Tab = TabNavigator({
                 color={tintColor}/>)
         })
     },
-    // Information:{
-    //     screen: Information,
-    //     navigationOptions: ({navigation}) => ({
-    //         header: null,
-    //         tabBarLabel: lang('Information'),
-    //         tabBarIcon: ({focused, tintColor}) => (<Icons
-    //             name={`ios-information-circle${focused
-    //                 ? ''
-    //                 : '-outline'}`}
-    //             size={30}
-    //             color={tintColor}/>)
-    //     })
-    // }
-
     Mine:{
         screen: Mine,
         navigationOptions: ({navigation}) => ({
