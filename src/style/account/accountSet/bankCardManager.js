@@ -1,0 +1,84 @@
+import {StyleSheet} from 'react-native'
+import { HEADER_FONT_COLOR, UI_ACTIVE_COLOR } from '../../../lib/color';
+
+export default styles = StyleSheet.create({
+    withdrawButtonTouchable:{
+        backgroundColor:UI_ACTIVE_COLOR,
+        borderRadius:4,
+        paddingVertical:10,
+        marginVertical:10,
+        width:'90%',
+        alignSelf:'center'
+    },
+    withdrawButtonText:{
+        color:HEADER_FONT_COLOR,
+        alignSelf:'center'
+    },
+    cardRoot:{
+        borderRadius:8,
+        margin:10,
+        overflow:'hidden'
+    },
+    cardInfoTextWrapper:{
+        flex:1,
+        marginRight:50,
+        marginTop:10,
+        marginLeft:10
+    },
+    cardType:{
+        color:HEADER_FONT_COLOR,
+        marginBottom:5,
+        fontSize:12
+    },
+    bankName:{
+        color:HEADER_FONT_COLOR,
+        marginBottom:5,
+        fontSize:16
+    },
+    cardNumber:{
+        color:HEADER_FONT_COLOR,
+        fontSize:22
+    },
+    defaultText:{
+        transform: [{ rotate: '45deg'},{translateX:15},{translateY:-20}],
+        fontSize:12,
+        backgroundColor:HEADER_FONT_COLOR,
+        color:UI_ACTIVE_COLOR,
+        alignSelf:'flex-end',
+        width:86,
+        textAlign:'center',
+        position:'absolute',
+        right:0,
+        top:15,
+        paddingVertical:3
+    },
+    cardInfo:{
+
+    },
+    cardImage:{
+        width:50,
+        height:50,
+        marginTop:10,
+        marginLeft:10,
+        zIndex:99,
+        backgroundColor:HEADER_FONT_COLOR,
+        borderRadius:25
+    },
+    cardFunctionButtonRoot:{
+        flexDirection:'row',
+        marginVertical:15,
+        justifyContent:'space-around',
+        marginLeft:60,
+        marginRight:50
+    },
+    cardFunctionButtonTouchable:{
+        borderRadius:4,
+        borderColor:HEADER_FONT_COLOR,
+        borderWidth:1,
+        paddingVertical:5,
+        paddingHorizontal:25
+    },
+    cardFunctionButtonText:{
+        color:HEADER_FONT_COLOR
+    }
+});

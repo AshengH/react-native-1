@@ -1,0 +1,62 @@
+import {StyleSheet} from 'react-native'
+import { FALL_HIGHLIGHT, GRID_LINE_COLOR, HEADER_FONT_COLOR, LINE_COLOR, UI_ACTIVE_COLOR } from '../../../lib/color';
+
+export default styles = StyleSheet.create({
+    warningText:{
+        width:'100%',
+        color:FALL_HIGHLIGHT,
+        textAlign:'center',
+        paddingVertical:20,
+        backgroundColor:GRID_LINE_COLOR,
+        marginVertical:10
+    },
+    inputViewRoot:{
+        width:'100%',
+        flexDirection:'row',
+        backgroundColor:HEADER_FONT_COLOR,
+        paddingVertical:20,
+        borderBottomWidth:1,
+        borderColor:LINE_COLOR
+    },
+    title:{
+        paddingHorizontal:20,
+        fontSize:16
+    },
+    textInput:{
+        fontSize:16,
+        flex:1,
+        width:'100%'
+    },
+    bankButtonTouchable:{
+        margin:10,
+        alignItems:'center',
+        backgroundColor:HEADER_FONT_COLOR,
+        paddingVertical:10,
+    },
+    bankImage:{
+        marginBottom:10
+    },
+    selectLocationTouchable:{
+        borderBottomWidth:1,
+        borderColor:LINE_COLOR,
+        paddingVertical:20,
+        paddingHorizontal:10,
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
+    submitButtonTouchable:{
+        backgroundColor:UI_ACTIVE_COLOR,
+        borderRadius:8,
+        width:'80%',
+        paddingVertical:10,
+        alignSelf:'center',
+        marginVertical:10
+    },
+    submitButtonText:{
+        color:HEADER_FONT_COLOR,
+        textAlign:'center'
+    },
+    arrowText:{
+        fontSize:18
+    }
+});
