@@ -53,7 +53,8 @@ export default styles = StyleSheet.create({
         width:100,
         textAlign:'center',
         paddingVertical:5,
-        fontSize:18
+        fontSize:18,
+
     },
     selectionRootView:{
         flex:1,justifyContent:'center'

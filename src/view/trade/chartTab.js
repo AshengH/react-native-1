@@ -52,35 +52,64 @@ export default class App extends Component {
     }
 
     render() {
+
         return (
-            <View style={[this.props.style]}>
-                <View style={{flexDirection:'row', justifyContentL:'space-between'}}>
-                    <View style={{width:'40%',marginLeft:10}}>
-                        <Text style={{alignSelf:'flex-start',color:this.props.tend,fontSize:17}}>{this.props.price || ''}</Text>
-                        <View style={{flexDirection:'row', justifyContentL:'space-between'}}>
-                            <Text style={{alignSelf:'center',color:this.props.tend}}>{this.props.rate || ''}</Text>
-                            <Text style={{alignSelf:'center',color:this.props.tend}}>{this.props.percent || ''}</Text>
+            <View style={[this.props.style,{height:145}]}>
+
+                    <View style={{width:'100%',paddingLeft:10,backgroundColor:'#E23635'}}>
+                        <Text style={{alignSelf:'flex-start',color:'#fff',fontSize:20,fontWeight:'600'}}>{this.props.price || ''}</Text>
+                        <View style={{display:'flex',flexDirection:'row',marginBottom: 6}}>
+                            <Text style={{alignSelf:'center',color:'#fff'}}>{this.props.rate || ''}</Text>
+                            <Text style={{alignSelf:'center',color:'#fff',marginHorizontal: 10}}>{this.props.percent || ''}</Text>
                         </View>
                     </View>
-                    <View style={{width:'55%',marginRight:10}}>
-                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-around'}}>
-                            <Text>开盘</Text>
-                            <Text style={{color:FALL}}>{this.props.opening || ''}</Text>
-                            <Text>最高</Text>
-                            <Text style={{color:RAISE}}>{this.props.highest || ''}</Text>
-                        </View>
-                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-around'}}>
-                            <Text>昨收</Text>
-                            <Text style={{color:FALL}}>{this.props.yesterday || ''}</Text>
-                            <Text>最低</Text>
-                            <Text style={{color:RAISE}}>{this.props.lowest || ''}</Text>
-                        </View>
+                    {/*<View style={{width:'55%',marginRight:10}}>*/}
+                        {/*<View style={{flexDirection:'row',flex:1,justifyContent:'space-around'}}>*/}
+                            {/*<Text>今开</Text>*/}
+                            {/*<Text style={{color:FALL}}>{this.props.opening || ''}</Text>*/}
+                            {/*<Text>最高</Text>*/}
+                            {/*<Text style={{color:RAISE}}>{this.props.highest || ''}</Text>*/}
+                        {/*</View>*/}
+                        {/*<View style={{flexDirection:'row',flex:1,justifyContent:'space-around'}}>*/}
+                            {/*<Text>昨收</Text>*/}
+                            {/*<Text style={{color:FALL}}>{this.props.yesterday || ''}</Text>*/}
+                            {/*<Text>最低</Text>*/}
+                            {/*<Text style={{color:RAISE}}>{this.props.lowest || ''}</Text>*/}
+                        {/*</View>*/}
+                    {/*</View>*/}
+
+
+                <View style={{display: 'flex',
+                    flexDirection:'row',
+                    justifyContent:'space-between',
+                    paddingHorizontal: 10,
+                    marginVertical: 10
+                }}>
+                    <View style={{display:'flex',flexDirection:'row',}}>
+                        <Text style={{color:'#666A72'}}>今开</Text>
+                        <Text style={{color:FALL}}>{this.props.opening || ''}</Text>
                     </View>
+                    <View style={{display:'flex',flexDirection:'row'}}>
+                        <Text style={{color:'#666A72'}}>最高</Text>
+                        <Text style={{color:RAISE}}>{this.props.highest || ''}</Text>
+                    </View>
+
+                </View>
+                <View style={{display: 'flex',flexDirection:'row',justifyContent:'space-between',paddingHorizontal:10,marginBottom:10}}>
+                    <View style={{display:'flex',flexDirection:'row'}}>
+                        <Text style={{color:'#666A72'}}>昨收</Text>
+                        <Text style={{color:FALL}}>{this.props.yesterday || ''}</Text>
+                    </View>
+                    <View style={{display:'flex',flexDirection:'row'}}>
+                        <Text style={{color:'#666A72'}}>最低</Text>
+                        <Text style={{color:RAISE}}>{this.props.lowest || ''}</Text>
+                    </View>
+
                 </View>
 
                 {/*中部按钮*/}
                 <View style={{flexDirection:'row',flex:1}}>
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type
                             title='Time-Sharing'
                             type='time'
@@ -99,7 +128,7 @@ export default class App extends Component {
                         this.props.close();
                     }}/> */}
 
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type title='1D' type='1D' select={this.state.type} onPress={(type)=>{
                             this.setState({type:type});
                             this.props.onPress(type);
@@ -121,7 +150,7 @@ export default class App extends Component {
                         {/*/>*/}
                     {/*</View>*/}
 
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type title='M1' type='1' select={this.state.type} onPress={(type)=>{
                             this.setState({type:type});
                             this.props.onPress(type);
@@ -129,7 +158,7 @@ export default class App extends Component {
                         }}/>
                     </View>
 
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type title='M3' type='3' select={this.state.type} onPress={(type)=>{
                             this.setState({type:type});
                             this.props.onPress(type);
@@ -137,7 +166,7 @@ export default class App extends Component {
                         }}/>
                     </View>
 
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type title='M5' type='5' select={this.state.type} onPress={(type)=>{
                             this.setState({type:type});
                             this.props.onPress(type);
@@ -145,7 +174,7 @@ export default class App extends Component {
                         }}/>
                     </View>
 
-                    <View style={{width:'16%',justifyContent:'center'}}>
+                    <View style={{width:SCREEN_WIDTH/6,justifyContent:'center',display:'flex',alignItems: 'center'}}>
                         <Type title='M15' type='15' select={this.state.type} onPress={(type)=>{
                             this.setState({type:type});
                             this.props.onPress(type);

@@ -39,10 +39,16 @@ import { lang } from '../../lang';
             return(
                 <LiveInformation navigation={this.props.navigation}/>
             );
-        }else{
+        }
+        if(this.state.content === 'oil'){
             return(
                 <PetrolAndGold navigation={this.props.navigation}/>
-            );
+            )
+        }
+        if(this.state.content === 'gold'){
+            return (
+                <NewsDetail navigation={this.props.navigation}/>
+            )
         }
     }
 
@@ -54,10 +60,13 @@ import { lang } from '../../lang';
         return(
             <View style={styles.buttonsRoot}>
                 <TouchableOpacity style={[styles.buttonTouchable,{borderBottomColor:liveBorderColor}]} onPress={()=>this.changeContent('live')}>
-                    <Text style={styles.buttonText}>{lang('Live')}</Text>
+                    <Text style={styles.buttonText}>{lang('Live')}1111</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.buttonTouchable,{borderBottomColor:oilBorderColor}]} onPress={()=>this.changeContent('oil')}>
-                    <Text style={styles.buttonText}>{lang('Petrol & Gold')}</Text>
+                    <Text style={styles.buttonText}>{lang('Petrol & Gold')}2222</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.buttonTouchable,{borderBottomColor:oilBorderColor}]} onPress={()=>this.changeContent('gold')}>
+                    <Text style={styles.buttonText}>{lang('Gold')}3333</Text>
                 </TouchableOpacity>
             </View>
         );

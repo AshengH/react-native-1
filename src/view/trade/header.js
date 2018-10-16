@@ -60,24 +60,28 @@ export default class App extends Component {
                                 <TouchableHighlight onPress={() => {this.props.onPress()}}>
                                     <View style={commonStyles.rowStyle}>
                                         <View>
-                                            <Text style={styles.switchBtn}>{this.props.commodity===''?this.props.commodity:Contracts.total[this.props.commodity].name}</Text>
-                                            <Text style={{alignSelf:'center'}}>{this.props.commodity===''?this.props.commodity:Contracts.total[this.props.commodity].contract}</Text>
+                                            <Text style={styles.switchBtn}>
+
+
+                                                {this.props.commodity===''?this.props.commodity:Contracts.total[this.props.commodity].name}</Text>
+                                            <Text style={{color:'#fff'}}>
+                                                {this.props.commodity===''?this.props.commodity:Contracts.total[this.props.commodity].contract}</Text>
                                         </View>
-                                        <View style={[styles.triangle]}>
-                                        </View>
+                                        {/*<View style={[styles.triangle]}>*/}
+                                        {/*</View>*/}
                                     </View>
                                 </TouchableHighlight>
                         </View>
                         <Icons name={`ios-list-box-outline`} style={styles.listIcon} onPress={() => {
                             this.props.navigation.navigate('Rule',{contract:Contracts.total[this.props.commodity].code});
                         }}/>
-                        <Icons name={this.state.active ? `ios-star` : 'ios-star-outline'} style={styles.listIcon} onPress={() => {
-                            if (Cache.isLogin()) {
-                                this.chooseStar(this.props.commodity)
-                                // this.props.navigation.navigate('Position');
-                                // this.props.onPress(true);
-                            }
-                        }}/>
+                        {/*<Icons name={this.state.active ? `ios-star` : 'ios-star-outline'} style={styles.listIcon} onPress={() => {*/}
+                            {/*if (Cache.isLogin()) {*/}
+                                {/*this.chooseStar(this.props.commodity)*/}
+                                {/*// this.props.navigation.navigate('Position');*/}
+                                {/*// this.props.onPress(true);*/}
+                            {/*}*/}
+                        {/*}}/>*/}
                     </View>
                 </View>
             )
@@ -108,13 +112,13 @@ export default class App extends Component {
                         <Icons name={`ios-list-box-outline`} style={styles.listIcon} onPress={() => {
                             this.props.navigation.navigate('Rule',{contract:Contracts.total[this.props.commodity].code});
                         }}/>
-                        <Icons name={this.state.active ? `ios-star` : 'ios-star-outline'} style={styles.listIcon} onPress={() => {
-                            if (Cache.isLogin()) {
-                                this.chooseStar(this.props.commodity)
-                                // this.props.navigation.navigate('Position');
-                                // this.props.onPress(true);
-                            }
-                        }}/>
+                        {/*<Icons name={this.state.active ? `ios-star` : 'ios-star-outline'} style={styles.listIcon} onPress={() => {*/}
+                            {/*if (Cache.isLogin()) {*/}
+                                {/*this.chooseStar(this.props.commodity)*/}
+                                {/*// this.props.navigation.navigate('Position');*/}
+                                {/*// this.props.onPress(true);*/}
+                            {/*}*/}
+                        {/*}}/>*/}
                     </View>
                 </View>
             )
@@ -155,8 +159,6 @@ export default class App extends Component {
 
         let aryStr = await AsyncStorage.getItem('self');
         let ary = JsonUtils.stringToJson(aryStr) || [];
-        console.log(ary,'打印数组');
-
         let code = this.props.commodity;
         if (ary.includes(code) === true) {
             this.state.active = true;

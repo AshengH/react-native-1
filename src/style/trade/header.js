@@ -4,7 +4,7 @@ import { GRAY_SVG_COLOR , HEADER_COLOR , HEADER_FONT_COLOR,UI_ACTIVE_COLOR, BASI
 
 export default styles = StyleSheet.create({
     container: {
-        backgroundColor: BACKGROUND_COLOR,
+        backgroundColor: '#E23635',
         height: 64,
         flexDirection: 'column',
         alignItems: 'center',
@@ -22,7 +22,7 @@ export default styles = StyleSheet.create({
         height: isIphoneX() ? 64 : 44,
         lineHeight: isIphoneX() ? 64 : 44,
         fontSize: 24,
-        color: HEADER_FONT_COLOR,
+        color: '#fff',
         left: 8,
         zIndex: 1
     },
@@ -31,18 +31,19 @@ export default styles = StyleSheet.create({
         width: 30,
         height: isIphoneX() ? 64 : 44,
         lineHeight: isIphoneX() ? 64 : 44,
+        color:'#fff'
     },
     title: {
         width: SCREEN_WIDTH,
-        color: HEADER_FONT_COLOR,
-        fontSize: 17,
+        color: '#fff',
+        fontSize: 20,
         alignSelf: 'center',
         textAlign: 'center',
         flex: 1
     },
     btnStyle: {
         position: 'absolute',
-        backgroundColor: HEADER_COLOR,
+        backgroundColor: "#fff",
         right: 10,
         alignSelf: 'center',
         height: isIphoneX() ? 64 : 44,
@@ -52,7 +53,7 @@ export default styles = StyleSheet.create({
         alignSelf: 'center',
         width: 240*RATIO,
         borderWidth: 1,
-        // borderColor: UI_ACTIVE_COLOR,
+        borderColor: UI_ACTIVE_COLOR,
         flexDirection: 'row',
         borderRadius: 8,
         overflow: 'hidden'
@@ -61,8 +62,11 @@ export default styles = StyleSheet.create({
         width:120*RATIO,
         textAlign: 'center',
         paddingVertical: 5,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        color:'#fff',
+        fontSize:18,
     },
+
     triangle: {
         position:'absolute',
         zIndex:1,
@@ -89,7 +93,7 @@ export default styles = StyleSheet.create({
     },
     rules:{
         fontSize: 15, 
-        color: GRAY_SVG_COLOR
+        color: '#fff'
     },
     selectorRoot:{
         flex: 1, 

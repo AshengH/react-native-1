@@ -30,7 +30,9 @@ class HomeNotice extends Component {
         super(props);
 
         this.state = {
-            homeNotice:[]
+            homeNotice:[],
+            searchInfo:"",
+            searchShow:"",
         }
     }
 
@@ -79,18 +81,52 @@ class HomeNotice extends Component {
         });
 
         return(
-            <View style={[commonStyle.rowStyle,styles.homeNotice]}>
-                <View style={styles.homeNoticeTilleWrapper}>
-                    <Text style={styles.homeNoticeTitle}>{lang('Notices')}</Text>
-                    <View style={styles.homeNoticeTitleOffset}></View>
+            <View>
+                <View style={styles.header}>
+                    <TouchableOpacity
+
+                    >
+                        <Image source={require('../../images/xiaoxi.png')} style={styles.xiaoxi}/>
+                    </TouchableOpacity>
+                    <View style={styles.input}>
+                        <TouchableOpacity
+
+                        >
+                            <Image source={require('../../images/search.png')} style={styles.search}/>
+                        </TouchableOpacity>
+
+                        <TextInput
+                            style={styles.find}
+                            placeholder={'请输入商品名称\/合约号'}
+                            maxLength={20}
+                            value={this.state.searchInfo}
+                            onChange={(e)=>{
+                                this.setState({searchInfo:e.target.value})
+                            }}
+                            onFocus={()=>{
+                                this.setState({searchShow:true})
+                            }}
+                            onBlur={()=>{
+                                setTimeout(()=>{
+                                    this.setState({searchShow:false})
+                                },500)
+
+                            }}
+
+                        />
+
+
+                    </View>
+                    <TouchableOpacity
+
+                    >
+                        <Image source={require('../../images/add.png')} style={styles.add}/>
+                    </TouchableOpacity>
                 </View>
-                <View  style={styles.swiperWrapper} >
-                    <View style={styles.swiperOffset}></View>
-                    <Swiper height={48} autoplay={true} showsPagination={false}>
-                        {content}
-                    </Swiper>
-                </View>
+
+
             </View>
+
         );
     }
 }
@@ -270,10 +306,59 @@ class App extends Component {
 
         return (
             <View style={styles.banner}>
-                <HomeNotice navigation={this.props.navigation}/>
-                {this.renderTabs()}
-                {this.renderTabContent()}
-                <View style={styles.loginButtonLine}/>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        onPress={()=>{ this.props.navigation.navigate('Server');}}
+                    >
+                        <Image source={require('../../images/xiaoxi.png')} style={styles.xiaoxi}/>
+                    </TouchableOpacity>
+                    <View style={styles.input}>
+                        <TouchableOpacity
+
+                        >
+                            <Image source={require('../../images/search.png')} style={styles.search}/>
+                        </TouchableOpacity>
+
+                        <TextInput
+                            style={styles.find}
+                            placeholder={'请输入商品名称\/合约号'}
+                            maxLength={20}
+                            value={this.state.searchInfo}
+                            onChange={(e)=>{
+                                this.setState({searchInfo:e.target.value})
+                            }}
+                            onFocus={()=>{
+                                this.setState({searchShow:true})
+                            }}
+                            onBlur={()=>{
+                                setTimeout(()=>{
+                                    this.setState({searchShow:false})
+                                },500)
+
+                            }}
+
+                        />
+
+
+                    </View>
+                    <TouchableOpacity
+
+                    >
+                        <Image source={require('../../images/add.png')} style={styles.add}/>
+                    </TouchableOpacity>
+                </View>
+
+                <HomeNotice />
+                {/*{this.renderTabs()}*/}
+                {/*{this.renderTabContent()}*/}
+                {/*<View style={styles.loginButtonLine}/>*/}
+                <View  style={styles.wrapper} >
+                    <Swiper style={styles.swiper} height={200} autoplay={true} showsPagination={false} loop={true}>
+                        <Image source={require('../../images/banner01.png')} style={styles.ban}/>
+                        <Image source={require('../../images/banner02.png')} style={styles.ban}/>
+                        <Image source={require('../../images/banner03.png')} style={styles.ban}/>
+                    </Swiper>
+                </View>
             </View>
         )
     }

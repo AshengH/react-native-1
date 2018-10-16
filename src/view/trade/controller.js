@@ -89,7 +89,10 @@ class Bar extends Component {
             return (
                 <View style={[this.props.style]}>
                     <Button title={lang('Login')} color={BASIC_FONT_COLOR} containerViewStyle={styles.barButtonWrap} buttonStyle={styles.barButton} onPress={()=>{this.props.navigation.navigate('Login')}}/>
-                    <Button title={lang('Sign Up')} color={BASIC_FONT_COLOR} containerViewStyle={styles.barButtonWrap} buttonStyle={styles.barButton} onPress={()=>{this.props.navigation.navigate('SignUp')}}/>
+                    <Button title={lang('Sign Up')} color={BASIC_FONT_COLOR} containerViewStyle={styles.barButtonWrap} buttonStyle={styles.barButton} onPress={()=>{this.props.navigation.navigate('SignUp')}}
+
+                    />
+
                 </View>
             )
         }
@@ -118,7 +121,7 @@ class Bar extends Component {
     }
 
     async addSimBalance() {
-        console.log('ccccc');
+
         try {
             const result = await req({
                 url: '/trade/addScore.htm',
@@ -223,8 +226,8 @@ export default class App extends Component {
                     {/*/>*/}
                 {/*</View>*/}
                 <View style={{flexDirection:'row',justifyContent:'space-around'}}>
-                    {this.renderFootButton(`${this.state.buyPrice}买涨`,'white',RAISE,()=>this.props.onPress(true))}
-                    {this.renderFootButton(`${this.state.sellPrice}买跌`,'white',FALL,()=>this.props.onPress(false))}
+                    {this.renderFootButton(`涨${this.state.buyPrice}`,'white',RAISE,()=>this.props.onPress(true))}
+                    {this.renderFootButton(`跌${this.state.sellPrice}`,'white',FALL,()=>this.props.onPress(false))}
                     {/*{this.renderFootButton(`持仓`,'gray','white',()=>{*/}
                         {/*if (this.state.isLogin){*/}
                             {/*this.props.navigation.navigate('Position')*/}

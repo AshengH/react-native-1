@@ -20,5 +20,7 @@ export default styles = StyleSheet.create({
     loginButtonsRoot:{
         paddingVertical:10,
         backgroundColor:HEADER_BACKGROUND
-    }
+    },
+
+
 });

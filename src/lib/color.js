@@ -18,7 +18,7 @@ export const BASIC_COLOR = '#000';
 export const UI_ACTIVE_COLOR = '#E84209';
 export const UI_ACTIVE_HOVER_COLOR = '#d43c43';
 
-export const RAISE = '#E84209';
+export const RAISE = '#DF3031';
 export const RAISE_HIGHLIGHT = '#1cffad';
 
 export const FALL = '#009900';

@@ -12,20 +12,21 @@ import {SafeBody, SCREEN_WIDTH} from "../../lib/adjust";
 import Live from './live/index'
 import News from './news/index'
 import Finance from './finance/index'
+
 export default class App extends Component{
     constructor(props){
         super(props);
         this.state={
-            selectedIndex:null,
+            selectedIndex:1,
             showLive:false,
         }
     }
 
-    componentDidMount(){
-        this.setState({
-            showLive:this.props.navigation.state.params && this.props.navigation.state.params.showLive
-        })
-    }
+    // componentDidMount(){
+    //     this.setState({
+    //         showLive:this.props.navigation.state.params && this.props.navigation.state.params.showLive
+    //     })
+    // }
 
     componentWillUnmount() {
 
@@ -33,28 +34,35 @@ export default class App extends Component{
 
     render(){
         return(
-            <SafeBody>
+            <View>
                 <Header title={'直播/资讯'}/>
                 {this.renderSeprater()}
                 {this.renderTopBar()}
                 {this.renderSeprater()}
                 {this.renderContentView()}
-            </SafeBody>
+            </View>
+
         )
     }
 
     renderContentView(){
-        if (this.state.selectedIndex === 2) {
-            return(
+
+        if(this.state.selectedIndex == 2){
+            return (
                 <News/>
-            );
-        }else {
-            if(this.state.showLive===true){
-                return(<Live/>)
-            }else {
-                return(<Finance/>)
-            }
+            )
         }
+        if(this.state.selectedIndex === 1){
+            return (
+                <Finance/>
+            )
+        }
+        if(this.state.selectedIndex === 3){
+            return (
+                <Live/>
+            )
+        }
+
 
 
     }
@@ -92,15 +100,16 @@ export default class App extends Component{
                             </TouchableOpacity>
                             <View style={broadcastStyle.underline} display={this.state.selectedIndex===2?'flex':'none'}/>
                         </View>
-                        {/*<View style={{flex:1}}>*/}
-                            {/*<TouchableOpacity*/}
-                                {/*onPress={()=>{this.setState({*/}
-                                    {/*selectedIndex:3*/}
-                                {/*})}}>*/}
-                            {/*<Text style={{fontSize:20,color: this.state.selectedIndex===3?UI_ACTIVE_COLOR:GRAY_SVG_COLOR}}>快讯</Text>*/}
-                            {/*</TouchableOpacity>*/}
-                            {/*<View style={broadcastStyle.underline} display={this.state.selectedIndex===3?'flex':'none'}/>*/}
-                        {/*</View>*/}
+                        <View style={{flex:1}}>
+                            <TouchableOpacity
+                                onPress={()=>{this.setState({
+                                    selectedIndex:3,
+                                    showLive:false
+                                })}}>
+                            <Text style={{fontSize:20,color: this.state.selectedIndex===3?UI_ACTIVE_COLOR:GRAY_SVG_COLOR}}>直播</Text>
+                            </TouchableOpacity>
+                            <View style={broadcastStyle.underline} display={this.state.selectedIndex===3?'flex':'none'}/>
+                        </View>
                 </View>
         )
     }

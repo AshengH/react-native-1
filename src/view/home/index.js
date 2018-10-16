@@ -104,9 +104,10 @@ class HomePage extends Component {
     render() {
         return (
             <SafeBody>
+
                 <ScrollView style={styles.scrollViewBackground} ref={(c)=>this.scrollView = c}>
+
                     <HeadPart/>
-                    <Text style={{width:SCREEN_WIDTH,height:30,textAlign:'center',fontSize:15,color:RAISE,backgroundColor:GRID_LINE_COLOR}}>精彩活动</Text>
                     <QuotePart/>
                 </ScrollView>
             </SafeBody>
@@ -128,6 +129,7 @@ export default StackNavigator({
 
     GotoTrade:{
         screen: Trade,
+
         navigationOptions: {
             header: null,
             tabBarVisible: false,
@@ -289,3 +291,4 @@ export default StackNavigator({
         }
     }
 });
+

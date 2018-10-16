@@ -148,8 +148,9 @@ export default class trade extends Component {
     constructor(props) {
         super(props);
         this.config = {
-            passCode:this.props.navigation.state.params.code
+            passCode:this.props.navigation.state.params.code ,
         };
+
         let c = Contracts.total[this.props.navigation.state.params.code].code;
         // console.log(`${CHART_URL}?code=${c}&timezone=${GMT}`);
         this.state = {

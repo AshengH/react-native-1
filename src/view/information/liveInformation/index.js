@@ -44,6 +44,8 @@ export default class App extends Component {
         if (this.state.onLoading === true) {
             return this.renderLoadingView();
         }
+
+        console.log(this.state.list)
         return (
                 <View style={liveInformationStyle.bgView}>
                     <FlatList style={liveInformationStyle.listView}

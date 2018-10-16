@@ -3,12 +3,12 @@ import {AsyncStorage} from 'react-native'
 export const DOMAIN = 'https://nf.hot7h.com';
 
 
-// export const HOST = 'http://10.12.179.128/api';
+export const HOST = 'http://10.12.179.128/api';
 // export const HOST = 'https://fk.xztz88.com/api';
-export const HOST = 'https://nf.hot7h.com/api';
+// export const HOST = 'https://nf.hot7h.com/api';
 
-// export const QUOTE = 'http://10.12.179.128:8480';
-export const QUOTE = 'https://quote.76bao.hk';
+export const QUOTE = 'http://10.12.179.128:8480';
+// export const QUOTE = 'https://quote.76bao.hk';
 // export const QUOTE = 'http://osquote.76bao.hk';
 
 // export const CHART_URL = 'http://localhost:88/index.html';

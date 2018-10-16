@@ -3,35 +3,74 @@ import {UI_ACTIVE_COLOR,BASIC_FONT_COLOR,HEADER_FONT_COLOR,LINE_COLOR,DOT_COLOR,
 import {RATIO, SCREEN_WIDTH} from './../../lib/adjust'
 
 export default styles = StyleSheet.create({
+    card:{
+        width:280,
+        height:140,
+
+
+    },
+    uncard:{
+        width:280,
+        height:120,
+
+    },
+
+    tabWrap:{
+        display:'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        height:40,
+        alignItems: 'center',
+
+    },
+    choose:{
+        color:'#F05522',
+        fontWeight:'600'
+    },
+    lineWidth:{
+        borderBottomWidth: 3,
+        padding:5 ,
+        borderBottomColor:'#F05522',
+    },
+
+
+
+
+
+
+
+
+
+
     dot:{
         backgroundColor: DOT_COLOR,
-        width: 6,
-        height: 6,
-        borderRadius: 6,
-        marginLeft: 2,
-        marginRight: 2
+        width: 7,
+        height: 7,
+        borderRadius: 7,
+        margin:5,
     },
     activeDot:{
-        backgroundColor: UI_ACTIVE_COLOR,
-        width: 13,
-        height: 6,
-        borderRadius: 6,
-        marginLeft: 2,
-        marginRight: 2
+        backgroundColor: '#4785DF',
+        width: 7,
+        height: 7,
+        borderRadius: 7,
+        margin:5,
     },
+
     pagination:{
-        bottom: 14
+        bottom: -30,
     },
+
     cellRoot:{
+        display:'flex',
         flexDirection: 'row',
-        width: SCREEN_WIDTH,
-        justifyContent: 'space-around',
+        width: '50%',
         alignContent: 'center',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     },
     emptyContent:{
         alignSelf: 'center',
-        width: SCREEN_WIDTH / 3
+        width: SCREEN_WIDTH / 3,
     },
     touchable:{
         alignSelf: 'center',
@@ -57,10 +96,18 @@ export default styles = StyleSheet.create({
         marginBottom: 10
     },
     fiatListWrapper:{
-        height: 103
+        display:'flex',
+        width:'100%',
+        height: 140,
+        paddingTop: 20,
+        backgroundColor: '#F7F7F7',
+        paddingBottom: 30,
+        overflow: 'hidden',
+
     },
     cryptoRoot:{
         backgroundColor: HEADER_FONT_COLOR,
+        width:2000,
     },
     cryptoListWrapper:{
         height: 186

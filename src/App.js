@@ -59,13 +59,15 @@ const Tab = TabNavigator({
                 color={tintColor}/>)
         })
     },
-    Broadcast: {
-        screen: Broadcast,
+    Trade: {
+        screen: Trade,
         navigationOptions: ({navigation}) => ({
             header: null,
-            tabBarLabel: '资讯',
+            tabBarLabel: '涨跌',
+            props:{code:'CL1811'},
             tabBarIcon: ({focused, tintColor}) => (<Icons
                 name={`ios-list-box`}
+                onPress={()=>{navigation.navigate('Trade',{code:'CL1811'})}}
                 size={35}
                 color={tintColor}/>)
         })

@@ -3,6 +3,81 @@ import {BACKGROUND_COLOR,HEADER_BACKGROUND, HEADER_FONT_COLOR, LINE_COLOR, TRADE
 import {RATIO, SCREEN_WIDTH} from './../../lib/adjust'
 
 export default styles = StyleSheet.create({
+    header:{
+        backgroundColor:'#0F55E1',
+        zIndex:99,
+        display: 'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        height:50,
+        paddingVertical:10,
+        paddingHorizontal:15,
+        alignItems: 'center',
+        position:"absolute",
+        left:0,
+        top:0,
+        width:'100%',
+    },
+    xiaoxi:{
+        height:22,
+        width:22,
+    },
+    input:{
+        display: 'flex',
+        flexDirection:'row',
+        opacity:0.72,
+        borderRadius:2,
+        zIndex:100,
+        backgroundColor:'#6AB3F4',
+        paddingVertical:5,
+        paddingHorizontal:10,
+        marginHorizontal:15,
+        flex:1,
+    },
+    search:{
+        height:22,
+        width:22,
+        opacity: 0.3
+    },
+    add:{
+        height:22,
+        width:22,
+    },
+    find:{
+      marginLeft: 10
+    },
+    ban:{
+        height:200,
+        width:'100%'
+    },
+    wrap:{
+      height:200,
+      width:'100%'
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     headBar: {
         height: 65 * RATIO,
         backgroundColor: HEADER_BACKGROUND,

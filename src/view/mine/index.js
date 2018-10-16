@@ -56,32 +56,43 @@ export default class App extends Component {
     }
 
     render(){
-        let item1 = {};
-        item1.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
-        item1.title='消息中心';
-        item1.subTitle='实时推送';
-        item1.description='这里有我们全部消息哦';
-        item1.onPress=()=>this.goNotice();
+        let item4 = {};
+        item4.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
+        item4.title='分享好友';
+        // item4.description='好东西记得分享哦';
+        let item5 = {};
+        item5.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
+        item5.title='阅读历史';
+        // item5.description='这里有我们全部消息哦';
+        item5.onPress=()=>this.goNotice();
         let item2 = {};
         item2.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
-        item2.title='在线客服';
-        item2.subTitle='及时解答';
-        item2.description='客服全天候在线';
+        item2.title='联系客服';
+        // item2.description='客服全天候在线';
         item2.onPress=()=>this.goServer();
+        let item1 = {};
+        item1.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
+        item1.title='我的公告';
+        // item1.description='这里有我们全部消息哦';
+        item1.onPress=()=>this.goNotice();
+
         let item3 = {};
         item3.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
-        item3.title='登录密码';
-        item3.subTitle='手动设置';
-        item3.description='设置您的登录密码';
+        item3.title='修改密码';
+
+        // item3.description='设置您的登录密码';
         item3.onPress=()=>this.goChangePassword();
-        // let item4 = {};
-        // item4.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
-        // item4.title='分享APP';
-        // item4.subTitle='马上分享';
-        // item4.description='好东西记得分享哦';
+
+        let item6 = {};
+        item6.image='https://nf.hot7h.com/static/media/logo.38ad0527.png';
+        item6.title='退出登录';
+        // item6.description='退出登入';
+        item6.onPress=()=>this.logout();
+
+
         return(
             <SafeBody>
-                <Header title={'我的'}/>
+                <Header title={'个人中心'}/>
                 <ScrollView>
                     <View style={minePageStyle.topView}>
                         <Image style={minePageStyle.topImage}
@@ -93,15 +104,19 @@ export default class App extends Component {
                     </View>
                     {/*{Cache.isLogin() ? this.renderBlanceBar() : null}*/}
                     {this.renderSperateLine()}
-                    {this.renderRow(item1)}
+                    {this.renderRow(item4)}
+                    {this.renderSperateLine()}
+                    {this.renderRow(item5)}
                     {this.renderSperateLine()}
                     {this.renderRow(item2)}
                     {this.renderSperateLine()}
+                    {this.renderRow(item1)}
+                    {this.renderSperateLine()}
                     {this.renderRow(item3)}
                     {this.renderSperateLine()}
-                    {/*{this.renderRow(item4)}*/}
-                    {/*{this.renderSperateLine()}*/}
-                    {Cache.isLogin() ? this.renderLogout() : null}
+
+                    {this.renderRow(item6)}
+                    {this.renderSperateLine()}
                 </ScrollView>
             </SafeBody>
         );
@@ -123,19 +138,19 @@ export default class App extends Component {
         )
     }
 
-    renderLogout(){
-        return(
-            <TouchableOpacity onPress={()=>this.logout()}>
-                <View style={{marginHorizontal:40,height:50,borderRadius:8,backgroundColor:'orange',justifyContent:'center',alignItems:'center',marginTop:40}}>
-                    <Text style={{color:'white',fontSize:22,alignSelf:'center'}}>退出登录</Text>
-                </View>
-            </TouchableOpacity>
-        )
-    }
+    // renderLogout(){
+    //     return(
+    //         <TouchableOpacity onPress={()=>this.logout()}>
+    //             <View style={{marginHorizontal:40,height:50,borderRadius:8,backgroundColor:'orange',justifyContent:'center',alignItems:'center',marginTop:40}}>
+    //                 <Text style={{color:'white',fontSize:22,alignSelf:'center'}}>退出登录</Text>
+    //             </View>
+    //         </TouchableOpacity>
+    //     )
+    // }
 
     renderSperateLine(){
         return(
-            <View style={{marginHorizontal:10,height:0.5,backgroundColor:LINE_COLOR}}/>
+            <View style={{marginLeft: 58,height:0.5,backgroundColor:LINE_COLOR}}/>
         )
     }
 
@@ -143,16 +158,16 @@ export default class App extends Component {
         return(
             <TouchableOpacity onPress={item.onPress}>
                 <View style={minePageStyle.cellView}>
-                    <View style={{flexDirection:'row'}}>
+                    <View style={minePageStyle.box}>
                         <Image style={minePageStyle.cellImage}
                                source={{uri:'https://nf.hot7h.com/static/media/logo.38ad0527.png'}}
                         />
-                        <View>
+                        <View style={minePageStyle.txt}>
                             <Text style={{fontSize:16,marginBottom:5}}>{item.title}</Text>
-                            <Text style={{fontSize:15,color:NOTICE_CONTENT_FONT_COLOR}}>{item.description}</Text>
+                            {/*<Text style={{fontSize:15,color:NOTICE_CONTENT_FONT_COLOR}}>{item.description}</Text>*/}
                         </View>
                     </View>
-                    <Text style={{fontSize:16,color:'red',justifyContent:'flex-end',textAlign:'right',marginRight:10}}>{item.subTitle}</Text>
+
                 </View>
             </TouchableOpacity>
 
@@ -261,18 +276,26 @@ const minePageStyle = StyleSheet.create({
         height:70,
         width:70,
     },
+    box:{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems:'center'
+    },
     cellView:{
         flexDirection:'row',
         // justifyContent:'space-between',
-        height:70,
+        height:53,
         justifyContent:'space-between',
         alignItems:'center'
     },
 
     cellImage:{
-        height:30,
-        width:30,
-        marginHorizontal:10,
+        height:18,
+        width:18,
+        marginHorizontal:20,
+    },
+    txt:{
+        marginTop: 5
     },
 });
 
